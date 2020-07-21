@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mick Jagger - The greatest rocker. EVER.</title>
+  <link rel="stylesheet" href="styles.css">
+
+
+  <div class="header" id="myHeader">
+    <h1>Image Grid</h1>
+    <p>Click on the buttons to change the grid view.</p>
+    <button class="btn" onclick="one()">1</button>
+    <button class="btn active" onclick="two()">2</button>
+    <button class="btn" onclick="four()">4</button>
+  </div>
+
+
+
+  <!-- resize box -->
+  <script>
+  // Get the elements with class="column"
+  var elements = document.getElementsByClassName("column");
+  
+  // Declare a loop variable
+  var i;
+  
+  // Full-width images
+  function one() {
+      for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "100%";  // IE10
+      elements[i].style.flex = "100%";
+    }
+  }
+  
+  // Two images side by side
+  function two() {
+    for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "50%";  // IE10
+      elements[i].style.flex = "50%";
+    }
+  }
+  
+  // Four images side by side
+  function four() {
+    for (i = 0; i < elements.length; i++) {
+      elements[i].style.msFlex = "25%";  // IE10
+      elements[i].style.flex = "25%";
+    }
+  }
+  
+  // Add active class to the current button (highlight it)
+  var header = document.getElementById("myHeader");
+  var btns = header.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+  </script>
+
+</head>
+<!-- Add link tag below -->
+
+<body>
+<!--
+Instructions:
+
+- Change the title tag to be about your favorite musician
+
+- Change the src of the img tag on line 9 to display as your favorite musician photo. Make sure you put this image in your images folder.
+
+- Alter the <li></li>(list items) in the <ol> on lines 10 - 15 to be information about your favorite musician.
+
+- Create a <ul> or <ol> with some quotes by your favorite musician
+
+- If you have time add more photos of your favorite musician. Make sure you uncomment the <h2> tag on line 26.
+
+-->
+
+<h2>Gallery</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="images/download.jpeg">
+    <img src="images/maxresdefault (1).jpg">
+    <img src="images/maxresdefault.jpg">
+  </div>
+  <div class="column">
+    <img src="images/download.jpeg">
+    <img src="images/maxresdefault.jpg">
+    <img src="images/maxresdefault (1).jpg">
+  </div>
+  <div class="column">
+    <img src="images/maxresdefault (1).jpg">
+    <img src="images/download.jpeg">
+    <img src="images/maxresdefault.jpg">
+  </div>
+  <div class="column">
+    <img src="images/maxresdefault (1).jpg">
+    <img src="images/maxresdefault.jpg">
+    <img src="images/download.jpeg">
+  </div>
+</div>
+<!--
+Add your <ul> or <ul> with quote from your favorite musician below
+-->
+
+<ol>
+  <h3>Muse:</h1> <!-- Notice how lists can contain other html elements like the <h1> tag. Our list now has a title! -->
+  <li>Born: July 26, 1943 (age 75 years), Dartford, United Kingdom</li>
+  <li>Height: 5′ 10″</li>
+  <title>
+    Muse is cool
+  </title> 
+  <!-- Lists can contain paragraph tags to! -->
+</ol>
+
+<!--<h2>Photos</h2>-->
+<!--
+If you have time add more photos of your favorite musician.
+-->
+</body>
+</html>
+<!--
+
+Useful documentation if you get lost
+
+File paths and images. How to link to files in folders -> https://www.w3schools.com/html/html_filepaths.asp
+
+Img Tag Documentation - https://www.w3schools.com/tags/tag_img.asp
+
+List tag documentation - https://www.w3schools.com/html/html_lists.asp
+
+-->
